@@ -54,6 +54,8 @@ export const metadata: Metadata = {
   },
 };
 
+import PageLoader from "@/components/PageLoader";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,6 +66,7 @@ export default function RootLayout({
       <body
         className={`${spaceMono.variable} ${oswald.variable} ${bangers.variable} ${permanentMarker.variable} ${creepster.variable} antialiased`}
       >
+        <PageLoader />
         <Providers>{children}</Providers>
       </body>
     </html>
