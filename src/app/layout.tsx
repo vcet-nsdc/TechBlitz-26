@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     images: ["/opengraph.jpg"],
   },
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico",
   },
 };
 
