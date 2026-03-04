@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TechBlitz 2026 - Manga Edition 💥
 
-## Getting Started
+Welcome to the official **TechBlitz 2026** Hackathon website! This project is a high-voltage, manga-themed platform crafted to rally warriors (participants) for VCET NSDC's ultimate tech showdown: **CODE. DESIGN. TRANSFORM.**
 
-First, run the development server:
+![TechBlitz Hero Preview](/public/images/hero.png)
+
+---
+
+## 🚀 The Stack
+
+This project was built for speed, style, and scale. Originally a Vite/React application, it has been fully migrated to a **Next.js 16 App Router** architecture.
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router, Turbopack)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/) (Radix Primitives)
+- **Animations**: [GSAP (GreenSock)](https://gsap.com/) & Native CSS `tw-animate-css`
+- **Data Fetching**: [TanStack Query](https://tanstack.com/query/latest) (React Query)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Forms**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- **Fonts**: Space Mono, Oswald, Bangers, Permanent Marker, Creepster (via `next/font/google`)
+
+---
+
+## 🎨 Manga Theme Architecture
+
+The website uses a custom, highly opinionated CSS framework (`globals.css`) built to resemble a comic book or manga:
+
+- **`.manga-panel`**: Hard, thick black borders with solid, 0-blur drop shadows.
+- **`.action-text`**: Dynamic, stroke-based text mimicking comic sound effects (e.g., *THWACK!*, *SWOOSH!*, *VROOOOM!*).
+- **`.manga-speech-bubble`**: Pure CSS speech bubbles with directional tails.
+- **`.speed-lines`**: CSS gradients used to simulate motion and intensity.
+- **`halftone-bg`**: Classic dot-matrix comic book background patterns.
+
+---
+
+## 📂 Project Structure
+
+The monolithic page has been modularized into highly reusable components under `src/components/`:
+
+- `Navbar.tsx` - Responsive navigation with mobile hamburger.
+- `PageLoader.tsx` - GSAP-powered `reveal-loader` entrance animation.
+- `HeroSection.tsx` - The explosive landing banner.
+- `AboutSection.tsx` - "The Quest" overview.
+- `TracksSection.tsx` - Hackathon domains (AI, Vibeathon, UI/UX).
+- `TimelineSection.tsx` - Event schedule with custom dot-nodes.
+- `PrizesSection.tsx` - Visual breakdown of rewards.
+- `JudgesSection.tsx` - Mentors and "The Elders".
+- `SponsorsSection.tsx` - Tiered grid of event allies.
+- `RulesSection.tsx` - Eligibility and judging criteria.
+- `FaqSection.tsx` - Manga-styled interactive accordion.
+- `GallerySection.tsx` - Past event highlights.
+- `CommunitySection.tsx` - Social and contact links.
+- `RegistrationCta.tsx` - Massive call to action.
+- `RegisterForm.tsx` - Multi-member signup form.
+
+---
+
+## 🛠️ Local Development
+
+Ready to enter the arena? Here is your setup guide:
+
+### 1. Requirements
+
+- **Node.js**: v18.17.0 or higher
+- **npm** / **yarn** / **pnpm** / **bun**
+
+### 2. Getting Started
+
+Clone the repository and install the 140+ dependencies (including all shadcn/ui elements):
 
 ```bash
+# Install dependencies
+npm install
+
+# Start the Turbopack dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Registration Page
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can preview the dedicated registration route at:
+[http://localhost:3000/register](http://localhost:3000/register)
 
-## Learn More
+### 4. Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Create an optimized production build
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start the deployed server locally
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📝 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vol 1: The Curse of the Algorithm © 2026 VCET NSDC. All rights reserved.
