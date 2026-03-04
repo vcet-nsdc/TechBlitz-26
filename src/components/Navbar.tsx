@@ -34,7 +34,7 @@ export default function Navbar() {
       </button>
 
       <a
-        href="#register"
+        href="http://vcet-nsdc.vercel.app/register"
         className="hidden md:block bg-black text-white px-6 py-2 font-bold uppercase tracking-wider hover:bg-[hsl(var(--manga-red))] transition-colors border-2 border-transparent hover:border-black transform hover:-translate-y-1 hover:shadow-[4px_4px_0_0_black]"
       >
         Register
@@ -51,7 +51,7 @@ export default function Navbar() {
           <a href="#faq" onClick={() => setMobileOpen(false)} className="hover:text-[hsl(var(--manga-red))] transition-colors">FAQ</a>
           <a href="#contact" onClick={() => setMobileOpen(false)} className="hover:text-[hsl(var(--manga-red))] transition-colors">Contact</a>
           <a
-            href="#register"
+            href="/register"
             onClick={() => setMobileOpen(false)}
             className="bg-black text-white px-8 py-3 font-bold uppercase tracking-wider hover:bg-[hsl(var(--manga-red))] transition-colors mt-2"
           >
