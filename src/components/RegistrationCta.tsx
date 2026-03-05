@@ -12,7 +12,7 @@ export default function RegistrationCta() {
           </h2>
           <p className="font-manga-marker text-2xl sm:text-4xl mb-12 text-[hsl(var(--manga-red))]">ENTER TECHBLITZ 2026</p>
 
-          <a href="/http://vcet-nsdc.vercel.app/register" className="relative overflow-hidden bg-[hsl(var(--manga-red))] text-white font-black text-3xl sm:text-5xl uppercase px-12 py-6 border-4 border-white hover:bg-white hover:text-black transition-colors transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_white] inline-block">
+          <a href="http://vcet-nsdc.vercel.app/register" className="relative overflow-hidden bg-[hsl(var(--manga-red))] text-white font-black text-3xl sm:text-5xl uppercase px-12 py-6 border-4 border-white hover:bg-white hover:text-black transition-colors transform hover:-translate-y-2 hover:shadow-[8px_8px_0_0_white] inline-block">
             <span className="relative z-10">Register Now</span>
             <div className="absolute inset-0 bg-white opacity-0 hover:opacity-100 transition-opacity z-0"></div>
           </a>

@@ -51,7 +51,7 @@ export default function Navbar() {
           <a href="#faq" onClick={() => setMobileOpen(false)} className="hover:text-[hsl(var(--manga-red))] transition-colors">FAQ</a>
           <a href="#contact" onClick={() => setMobileOpen(false)} className="hover:text-[hsl(var(--manga-red))] transition-colors">Contact</a>
           <a
-            href="/register"
+            href="http://vcet-nsdc.vercel.app/register"
             onClick={() => setMobileOpen(false)}
             className="bg-black text-white px-8 py-3 font-bold uppercase tracking-wider hover:bg-[hsl(var(--manga-red))] transition-colors mt-2"
           >
