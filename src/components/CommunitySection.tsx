@@ -3,8 +3,8 @@
 export default function CommunitySection() {
   const socials = [
     { name: "Discord", emoji: "💬", link: "#", desc: "Join the warrior chat" },
-    { name: "Instagram", emoji: "📸", link: "#", desc: "@techblitz.vcet" },
-    { name: "Twitter / X", emoji: "🐦", link: "#", desc: "@TechBlitzVCET" },
+    { name: "Instagram", emoji: "📸", link: "#", desc: "@vcet.nsdc" },
+    { name: "Twitter / X", emoji: "🐦", link: "#", desc: "@vcetnsdc" },
     { name: "LinkedIn", emoji: "💼", link: "#", desc: "VCET NSDC" },
   ];
 
@@ -47,7 +47,7 @@ export default function CommunitySection() {
               <span className="text-3xl shrink-0">📧</span>
               <div>
                 <div className="font-manga-title text-lg uppercase">Email</div>
-                <div className="font-bold text-sm">techblitz@vcet.edu</div>
+                <div className="font-bold text-sm">vcetnsdc@vcet.edu.in</div>
               </div>
             </div>
             <div className="border-2 border-black p-4 flex items-start gap-4">
@@ -61,7 +61,7 @@ export default function CommunitySection() {
               <span className="text-3xl shrink-0">📞</span>
               <div>
                 <div className="font-manga-title text-lg uppercase">Helpline</div>
-                <div className="font-bold text-sm">+91 98765 43210</div>
+                <div className="font-bold text-sm">+91 97665 05800</div>
               </div>
             </div>
           </div>

@@ -45,9 +45,9 @@ export default function Home() {
         <AboutSection />
         <TracksSection />
         <TimelineSection />
-        <PrizesSection />
+        {/* <PrizesSection /> */}
         <JudgesSection />
-        <SponsorsSection />
+        {/* <SponsorsSection /> */}
         <RulesSection />
         <FaqSection />
         <GallerySection />

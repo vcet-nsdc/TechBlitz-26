@@ -38,7 +38,7 @@ export default function HeroSection() {
           href="http://vcet-nsdc.vercel.app/register"
           className="inline-block bg-[hsl(var(--manga-red))] text-white text-2xl font-black uppercase px-10 py-4 border-4 border-white hover:bg-white hover:text-black hover:border-[hsl(var(--manga-red))] transition-all transform hover:scale-105"
         >
-          [ Registrations Opening Soon ]
+           Registrations are Opened 
         </a>
       </div>
     </section>
