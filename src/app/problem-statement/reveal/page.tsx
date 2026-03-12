@@ -15,6 +15,7 @@ export default function ProblemStatementReveal() {
   const [teamData, setTeamData] = useState<TeamData | null>(null);
   const [countdown, setCountdown] = useState(3);
   const [showStatement, setShowStatement] = useState(false);
+  const [isDownloadingPdf, setIsDownloadingPdf] = useState(false);
 
   const triggerConfetti = () => {
     const duration = 3 * 1000;
@@ -75,6 +76,57 @@ export default function ProblemStatementReveal() {
 
     return () => clearInterval(timer);
   }, [router]);
+
+  const handleDownloadPdf = async () => {
+    if (!teamData) return;
+
+    try {
+      setIsDownloadingPdf(true);
+      const { jsPDF } = await import('jspdf');
+      const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const margin = 40;
+      const maxWidth = pageWidth - margin * 2;
+      let y = 60;
+
+      const addWrappedText = (text: string, fontSize = 12, lineGap = 18) => {
+        doc.setFontSize(fontSize);
+        const lines = doc.splitTextToSize(text, maxWidth);
+        doc.text(lines, margin, y);
+        y += lines.length * lineGap;
+      };
+
+      doc.setFont('helvetica', 'bold');
+      addWrappedText('TechBlitz26 - Problem Statement', 18, 22);
+      y += 6;
+
+      doc.setFont('helvetica', 'normal');
+      addWrappedText(`Team: ${teamData.teamName}`, 12, 18);
+      addWrappedText(`Domain: ${teamData.domain}`, 12, 18);
+      y += 10;
+
+      doc.setFont('helvetica', 'bold');
+      addWrappedText(problemStatement.title, 16, 20);
+      y += 8;
+
+      doc.setFont('helvetica', 'bold');
+      addWrappedText('Challenge Statement', 13, 18);
+      doc.setFont('helvetica', 'normal');
+      addWrappedText(problemStatement.statement, 12, 18);
+      y += 8;
+
+      doc.setFont('helvetica', 'bold');
+      addWrappedText('Requirements', 13, 18);
+      doc.setFont('helvetica', 'normal');
+      addWrappedText(problemStatement.requirements.join(' '), 12, 18);
+
+      const safeTeamName = teamData.teamName.trim().replace(/\s+/g, '-').toLowerCase();
+      const fileName = `problem-statement-${safeTeamName || 'team'}.pdf`;
+      doc.save(fileName);
+    } finally {
+      setIsDownloadingPdf(false);
+    }
+  };
 
   if (!teamData) {
     return (
@@ -174,6 +226,14 @@ export default function ProblemStatementReveal() {
                   >
                     {teamData.domain === 'uiux' ? 'Open Figma' : 'Open GitHub'}
                   </a>
+                  <button
+                    type="button"
+                    onClick={handleDownloadPdf}
+                    disabled={isDownloadingPdf}
+                    className="px-4 sm:px-6 py-2 sm:py-3 manga-panel text-base sm:text-lg font-manga-marker text-black hover:shadow-manga-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isDownloadingPdf ? 'Preparing PDF...' : 'Download PS as PDF'}
+                  </button>
                   {/* <button
                     onClick={() => router.push('/certificates')}
                     className="px-6 py-3 manga-panel font-manga-marker hover:shadow-manga-red transition-all duration-300"
