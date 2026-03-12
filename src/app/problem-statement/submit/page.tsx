@@ -131,29 +131,29 @@ export default function Submission() {
   const isGitHubDomain = registrationData.domain === 'vibecoding' || registrationData.domain === 'agenticai';
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans halftone-bg flex items-center justify-center p-4">
+    <div className="min-h-screen bg-white text-black font-sans halftone-bg flex items-center justify-center px-3 py-6 sm:p-4">
       <div className="w-full max-w-2xl">
         {/* Progress Indicator */}
-        <div className="mb-8 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</div>
-            <div className="w-16 h-1 bg-[#6c47ff]"></div>
-            <div className="w-8 h-8 bg-[#6c47ff] rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
-            <div className="w-16 h-1 bg-gray-300"></div>
-            <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-sm font-bold">3</div>
+        <div className="mb-6 sm:mb-8 text-center">
+          <div className="flex items-center justify-center space-x-1 sm:space-x-2 mb-3 sm:mb-4">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold">✓</div>
+            <div className="w-8 sm:w-16 h-1 bg-[#6c47ff]"></div>
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-[#6c47ff] rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold">2</div>
+            <div className="w-8 sm:w-16 h-1 bg-gray-300"></div>
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-xs sm:text-sm font-bold">3</div>
           </div>
-          <p className="text-gray-600 text-sm">Step 2 of 3: Submit Your Work</p>
+          <p className="text-gray-600 text-xs sm:text-sm">Step 2 of 3: Submit Your Work</p>
         </div>
 
         {/* Submission Form */}
-        <div className="manga-panel p-8 shadow-manga-lg">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold font-manga-title mb-4 action-text-red">
+        <div className="manga-panel p-4 sm:p-8 shadow-manga-lg">
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold font-manga-title mb-3 sm:mb-4 action-text-red">
               Submit Your Work
             </h1>
-            <p className="font-manga-marker text-lg">
-              Team: <span className="font-manga-action">{registrationData.teamName}</span> | 
-              Domain: <span className="font-manga-action capitalize">{registrationData.domain}</span>
+            <p className="font-manga-marker text-sm sm:text-lg text-black">
+              Team: <span className="text-md">{registrationData.teamName}</span> | 
+              Domain: <span className="text-md">{registrationData.domain}</span>
             </p>
           </div>
 
@@ -167,7 +167,7 @@ export default function Submission() {
                 type="url"
                 value={submissionUrl}
                 onChange={handleUrlChange}
-                className={`w-full px-4 py-3 bg-white border-2 border-black font-manga-marker text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all ${
+                className={`w-full px-4 py-3 bg-white border-2 border-black  text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all ${
                   urlError 
                     ? 'border-red-500' 
                     : ''
@@ -185,11 +185,11 @@ export default function Submission() {
               )}
               
               {/* Format Hint */}
-              <div className="mt-3 p-3 manga-panel">
-                <p className="font-manga-marker text-sm">
+              <div className="mt-3 p-2 sm:p-3 manga-panel">
+                <p className=" text-xs sm:text-sm text-black">
                   <span className="font-manga-action">Format required:</span><br/>
                   {isGitHubDomain ? (
-                    'Must be a valid GitHub repository URL'
+                    'GitHub repository URL(e.g.,https://github.com/username/TECHBLITZ26_TEAMNAME)'
                   ) : (
                     'Must start with https://www.figma.com/'
                   )}
@@ -201,7 +201,7 @@ export default function Submission() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 manga-panel font-manga-action text-2xl action-text-red hover:shadow-manga-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3 sm:py-4 manga-panel font-manga-action text-xl sm:text-2xl action-text-red hover:shadow-manga-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center">

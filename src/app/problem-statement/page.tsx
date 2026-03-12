@@ -95,27 +95,27 @@ export default function TeamRegistration() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black font-sans halftone-bg flex items-center justify-center p-4">
+    <div className="min-h-screen bg-white text-black font-sans halftone-bg flex items-center justify-center px-3 py-6 sm:p-4">
       <div className="w-full max-w-2xl">
         {/* Progress Indicator */}
-        <div className="mb-8 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-[#6c47ff] rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
-            <div className="w-16 h-1 bg-[#6c47ff]"></div>
-            <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-sm font-bold">2</div>
-            <div className="w-16 h-1 bg-gray-300"></div>
-            <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-sm font-bold">3</div>
+        <div className="mb-6 sm:mb-8 text-center">
+          <div className="flex items-center justify-center space-x-1 sm:space-x-2 mb-3 sm:mb-4">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-[#6c47ff] rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold">1</div>
+            <div className="w-8 sm:w-16 h-1 bg-[#6c47ff]"></div>
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-xs sm:text-sm font-bold">2</div>
+            <div className="w-8 sm:w-16 h-1 bg-gray-300"></div>
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-xs sm:text-sm font-bold">3</div>
           </div>
-          <p className="text-gray-600 text-sm">Step 1 of 3: Team Registration</p>
+          <p className="text-gray-600 text-xs sm:text-sm">Step 1 of 3: Team Registration</p>
         </div>
 
         {/* Registration Form */}
-        <div className="manga-panel p-8 shadow-manga-lg">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold font-manga-title mb-4 action-text-red">
+        <div className="manga-panel p-4 sm:p-8 shadow-manga-lg">
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-4xl font-bold font-manga-title mb-3 sm:mb-4 action-text-red">
               TechBlitz26 Registration
             </h1>
-            <p className="font-manga-marker text-lg">Register your team for the ultimate tech challenge</p>
+            <p className="font-manga-marker text-sm sm:text-lg text-black">Register your team for the ultimate tech challenge</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -185,10 +185,10 @@ export default function TeamRegistration() {
 
             {/* Domain Selection */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-3 sm:mb-4">
                 Select Your Domain *
               </label>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 {domains.map((domain) => (
                   <button
                     key={domain.id}
@@ -196,14 +196,14 @@ export default function TeamRegistration() {
                     onClick={() => handleDomainSelect(domain.id)}
                     className={`manga-panel p-4 transition-all duration-300 hover:scale-105 ${
                       formData.domain === domain.id
-                        ? 'shadow-manga-red border-red-500'
-                        : 'hover:shadow-manga-red'
+                        ? 'shadow-manga-red border-red-500! bg-red-500! text-white'
+                        : 'hover:shadow-manga-red bg-white'
                     }`}
                     disabled={isSubmitting}
                   >
-                    <div className="text-3xl mb-2">{domain.icon}</div>
-                    <h3 className="text-black font-semibold mb-1">{domain.name}</h3>
-                    <p className="text-gray-600 text-xs">{domain.description}</p>
+                    <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">{domain.icon}</div>
+                    <h3 className={`font-semibold text-sm sm:text-base mb-1 ${formData.domain === domain.id ? 'text-white' : 'text-black'}`}>{domain.name}</h3>
+                    <p className={`text-xs ${formData.domain === domain.id ? 'text-red-100' : 'text-gray-600'}`}>{domain.description}</p>
                   </button>
                 ))}
               </div>
@@ -213,7 +213,7 @@ export default function TeamRegistration() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 manga-panel font-manga-action text-2xl action-text-red hover:shadow-manga-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-3 sm:py-4 manga-panel font-manga-action text-xl sm:text-2xl action-text-red hover:shadow-manga-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? 'Processing...' : 'Continue to Submission'}
             </button>
