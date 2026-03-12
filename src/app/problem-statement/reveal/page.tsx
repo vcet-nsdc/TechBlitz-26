@@ -113,11 +113,11 @@ export default function ProblemStatementReveal() {
           <div className="animate-in slide-in-from-bottom duration-1000">
             {/* Success Message */}
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold font-manga-title mb-4 action-text-red">
+              <h1 className="text-3xl font-bold  mb-4 action-text-red">
                 Good luck! 🚀
               </h1>
               <p className="font-manga-marker text-lg">
-                Team: <span className="font-manga-action">{teamData.teamName}</span>
+                Team: <span className="">{teamData.teamName}</span>
               </p>
             </div>
 
@@ -125,7 +125,7 @@ export default function ProblemStatementReveal() {
             <div className="manga-panel p-8 shadow-manga-lg">
               {/* Title */}
               <div className="text-center mb-8">
-                <h2 className="text-4xl font-bold bg-linear-to-r from-[#6c47ff] to-[#00d4ff] bg-clip-text text-transparent mb-4">
+                <h2 className="text-4xl font-bold bg-linear-to-r from-[#6c47ff] to-[#00d4ff] bg-clip-text text-transparent mb-4" style={{ fontFamily: ' serif' }}>
                   {problemStatement.title}
                 </h2>
                 <div className="flex items-center justify-center space-x-4 font-manga-marker">
@@ -146,15 +146,15 @@ export default function ProblemStatementReveal() {
 
               {/* Statement */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold font-manga-title mb-4">Challenge Statement</h3>
-                <p className="font-manga-marker leading-relaxed text-lg">
+                <h3 className="text-xl font-semibold  mb-4">Challenge Statement</h3>
+                <p className="leading-relaxed text-lg" style={{ fontFamily: ' serif' }}>
                   {problemStatement.statement}
                 </p>
               </div>
 
               {/* Requirements */}
               <div className="mb-8">
-                <h3 className="text-xl font-semibold font-manga-title mb-4">Requirements</h3>
+                <h3 className="text-xl font-semibold  mb-4">Requirements</h3>
                 <ul className="space-y-3">
                   {problemStatement.requirements.map((requirement, index) => (
                     <li key={index} className="flex items-start">
@@ -177,16 +177,16 @@ export default function ProblemStatementReveal() {
                     href={teamData.domain === 'uiux' ? 'https://www.figma.com/' : 'https://github.com/'}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 manga-panel font-manga-action text-lg action-text-red hover:shadow-manga-red transition-all duration-300"
+                    className="px-6 py-3 manga-panel  text-lg action-text-red hover:shadow-manga-red transition-all duration-300"
                   >
                     {teamData.domain === 'uiux' ? 'Open Figma' : 'Open GitHub'}
                   </a>
-                  <button
+                  {/* <button
                     onClick={() => router.push('/certificates')}
                     className="px-6 py-3 manga-panel font-manga-marker hover:shadow-manga-red transition-all duration-300"
                   >
                     View Certificates
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

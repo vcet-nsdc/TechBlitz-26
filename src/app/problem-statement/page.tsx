@@ -121,7 +121,7 @@ export default function TeamRegistration() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Team Name */}
             <div>
-              <label className="block font-manga-marker text-sm mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Team Name *
               </label>
               <input
@@ -129,7 +129,7 @@ export default function TeamRegistration() {
                 name="teamName"
                 value={formData.teamName}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white border-2 border-black font-manga-marker text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all"
+                className="w-full px-4 py-3 bg-white border-2 border-black text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all"
                 placeholder="Enter your team name"
                 disabled={isSubmitting}
               />
@@ -137,7 +137,7 @@ export default function TeamRegistration() {
 
             {/* Leader Name */}
             <div>
-              <label className="block font-manga-marker text-sm mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Team Leader Name *
               </label>
               <input
@@ -145,7 +145,7 @@ export default function TeamRegistration() {
                 name="leaderName"
                 value={formData.leaderName}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white border-2 border-black font-manga-marker text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all"
+                className="w-full px-4 py-3 bg-white border-2 border-black text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all"
                 placeholder="Enter team leader name"
                 disabled={isSubmitting}
               />
@@ -153,7 +153,7 @@ export default function TeamRegistration() {
 
             {/* Member 2 Name */}
             <div>
-              <label className="block font-manga-marker text-sm mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Member 2 Name *
               </label>
               <input
@@ -161,7 +161,7 @@ export default function TeamRegistration() {
                 name="member2"
                 value={formData.member2}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white border-2 border-black font-manga-marker text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all"
+                className="w-full px-4 py-3 bg-white border-2 border-black text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all"
                 placeholder="Enter member 2 name"
                 disabled={isSubmitting}
               />
@@ -169,7 +169,7 @@ export default function TeamRegistration() {
 
             {/* Member 3 Name */}
             <div>
-              <label className="block font-manga-marker text-sm mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Member 3 Name (Optional)
               </label>
               <input
@@ -177,7 +177,7 @@ export default function TeamRegistration() {
                 name="member3"
                 value={formData.member3}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-white border-2 border-black font-manga-marker text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all"
+                className="w-full px-4 py-3 bg-white border-2 border-black text-black placeholder-gray-500 focus:outline-none focus:border-red-500 transition-all"
                 placeholder="Enter member 3 name"
                 disabled={isSubmitting}
               />
@@ -185,7 +185,7 @@ export default function TeamRegistration() {
 
             {/* Domain Selection */}
             <div>
-              <label className="block font-manga-marker text-sm mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-4">
                 Select Your Domain *
               </label>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

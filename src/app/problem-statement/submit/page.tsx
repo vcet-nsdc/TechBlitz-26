@@ -160,7 +160,7 @@ export default function Submission() {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* URL Input */}
             <div>
-              <label className="block font-manga-marker text-sm mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 {isGitHubDomain ? 'GitHub Repository URL' : 'Figma File URL'} *
               </label>
               <input
