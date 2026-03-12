@@ -2,20 +2,19 @@
 
 export default function TimelineSection() {
   const events = [
-    { time: "9:00 AM", title: "Gates Open", desc: "Registration & check-in. Collect your warrior badges.", icon: "🚪" },
-    { time: "10:00 AM", title: "Opening Ceremony", desc: "The battle begins! Problem statements revealed.", icon: "⚔️" },
-    { time: "10:30 AM", title: "Hacking Begins", desc: "Squads deploy. Code, design, and innovate.", icon: "💻" },
-    { time: "1:00 PM", title: "Lunch Break", desc: "Refuel your power. Food & networking.", icon: "🍱" },
-    { time: "2:00 PM", title: "Mentor Rounds", desc: "The Elders visit your base for guidance.", icon: "🧙" },
-    { time: "4:00 PM", title: "Submissions Close", desc: "Final commits! Push your code, upload your designs.", icon: "⏰" },
-    { time: "4:30 PM", title: "Presentations", desc: "Pitch your creation to the judges.", icon: "🎤" },
-    { time: "6:00 PM", title: "Awards & Closing", desc: "Victory! Champions are crowned.", icon: "🏆" },
+    { time: "9:00 AM", title: "Gates Open", desc: "Registration & check-in. Proceed to the Adventurers' Desk on the Ground Floor!", icon: "🚪" },
+    { time: "10:00 AM", title: "Opening Ceremony", desc: "The battle officially begins! Attend the mandatory inauguration where the true depth of your quests (Problem Statements) will be discussed.", icon: "⚔️" },
+    { time: "11:00 AM", title: "Hackathon Begins (The Sprint)", desc: "Squads deploy to their designated training grounds. Time to code, design, and innovate at full power!", icon: "💻" },
+    { time: "1:00 PM", title: "Pitching Begins (Mentor Rounds)", desc: "The Elders (Mentors) will visit your base for guidance. Show them the jutsu you've been working on!", icon: "🍱" },
+    { time: "2:30 PM", title: "Break", desc: "Refuel your mana and power levels. Grab some food and network with fellow guilds.", icon: "🧙" },
+    { time: "3:30 PM", title: "Finalist Presentation", desc: "The ultimate tournament showdown! Pitch your fully forged creations to the high judges.", icon: "⏰" },
+    { time: "5:00 PM", title: "Awards & Closing", desc: "Victory! The dust settles, and the new TechBlitz Champions are crowned.", icon: "🎤" },
   ];
 
   return (
     <section id="timeline" className="mt-16 manga-reveal opacity-0 translate-y-12 transition-all duration-700">
       <div className="inline-block border-4 border-black bg-black text-white px-8 py-3 mb-8 transform -skew-x-12 shadow-[6px_6px_0_0_hsl(var(--manga-red))]">
-        <h2 className="font-manga-title text-4xl sm:text-5xl uppercase font-black transform skew-x-12">Battle Schedule</h2>
+        <h2 className="font-manga-title text-4xl sm:text-5xl uppercase font-black transform skew-x-12">Official Mission Timeline</h2>
       </div>
 
       <div className="relative border-4 border-black bg-white p-6 sm:p-8 manga-panel">
