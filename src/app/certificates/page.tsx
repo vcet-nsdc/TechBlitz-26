@@ -28,7 +28,7 @@ export default function Certificates() {
     e.preventDefault();
     
     if (!teamName.trim()) {
-      toast.error('Please enter a team name');
+      toast.error('Please enter your team name');
       return;
     }
 
