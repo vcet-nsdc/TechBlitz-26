@@ -117,55 +117,63 @@ export default function AdminDashboard() {
   const stats = getDomainStats();
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] p-4">
+    <div className="min-h-screen bg-[#0a0a0f] p-3 sm:p-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-white mb-2">TechBlitz26 — Registered Teams</h1>
-            <p className="text-gray-400">Manage and view all registered teams</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">TechBlitz26 — Registered Teams</h1>
+            <p className="text-sm sm:text-base text-gray-400">Manage and view all registered teams</p>
           </div>
-          <button
-            onClick={handleLogout}
-            className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-          >
-            Logout
-          </button>
+          <div className="flex gap-2 flex-wrap">
+            <a
+              href="/admin/judge-portal"
+              className="px-3 sm:px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm sm:text-base"
+            >
+              Judge Portal
+            </a>
+            <button
+              onClick={handleLogout}
+              className="px-3 sm:px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm sm:text-base"
+            >
+              Logout
+            </button>
+          </div>
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-          <div className="bg-[#13131a] border border-[#ffffff10] rounded-lg p-4">
-            <div className="text-2xl font-bold text-white">{stats.total}</div>
-            <div className="text-gray-400 text-sm">Total Teams</div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
+          <div className="bg-[#13131a] border border-[#ffffff10] rounded-lg p-3 sm:p-4">
+            <div className="text-xl sm:text-2xl font-bold text-white">{stats.total}</div>
+            <div className="text-xs sm:text-sm text-gray-400">Total Teams</div>
           </div>
-          <div className="bg-[#13131a] border border-[#ffffff10] rounded-lg p-4">
-            <div className="text-2xl font-bold text-purple-400">{stats.vibecoding}</div>
-            <div className="text-gray-400 text-sm">Vibe Coding</div>
+          <div className="bg-[#13131a] border border-[#ffffff10] rounded-lg p-3 sm:p-4">
+            <div className="text-xl sm:text-2xl font-bold text-purple-400">{stats.vibecoding}</div>
+            <div className="text-xs sm:text-sm text-gray-400">Vibe Coding</div>
           </div>
-          <div className="bg-[#13131a] border border-[#ffffff10] rounded-lg p-4">
-            <div className="text-2xl font-bold text-blue-400">{stats.agenticai}</div>
-            <div className="text-gray-400 text-sm">Agentic AI</div>
+          <div className="bg-[#13131a] border border-[#ffffff10] rounded-lg p-3 sm:p-4">
+            <div className="text-xl sm:text-2xl font-bold text-blue-400">{stats.agenticai}</div>
+            <div className="text-xs sm:text-sm text-gray-400">Agentic AI</div>
           </div>
-          <div className="bg-[#13131a] border border-[#ffffff10] rounded-lg p-4">
-            <div className="text-2xl font-bold text-pink-400">{stats.uiux}</div>
-            <div className="text-gray-400 text-sm">UI/UX</div>
+          <div className="bg-[#13131a] border border-[#ffffff10] rounded-lg p-3 sm:p-4">
+            <div className="text-xl sm:text-2xl font-bold text-pink-400">{stats.uiux}</div>
+            <div className="text-xs sm:text-sm text-gray-400">UI/UX</div>
           </div>
         </div>
 
         {/* Filters */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-6">
           <input
             type="text"
             placeholder="Search by team name..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="flex-1 px-4 py-2 bg-[#13131a] border border-[#ffffff20] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#6c47ff]"
+            className="flex-1 px-3 sm:px-4 py-2 bg-[#13131a] border border-[#ffffff20] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#6c47ff] text-sm sm:text-base"
           />
           <select
             value={domainFilter}
             onChange={(e) => setDomainFilter(e.target.value as Domain | 'all')}
-            className="px-4 py-2 bg-[#13131a] border border-[#ffffff20] rounded-lg text-white focus:outline-none focus:border-[#6c47ff]"
+            className="px-3 sm:px-4 py-2 bg-[#13131a] border border-[#ffffff20] rounded-lg text-white focus:outline-none focus:border-[#6c47ff] text-sm sm:text-base"
           >
             <option value="all">All Domains</option>
             <option value="vibecoding">Vibe Coding</option>
@@ -177,43 +185,43 @@ export default function AdminDashboard() {
         {/* Teams Table */}
         <div className="bg-[#13131a] border border-[#ffffff10] rounded-lg overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full min-w-[600px]">
               <thead className="bg-[#0a0a0f] border-b border-[#ffffff10]">
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">#</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Team Name</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Leader</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Member 2</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Member 3</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Domain</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Submission</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Registered</th>
+                  <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">#</th>
+                  <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Team Name</th>
+                  <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider hidden sm:table-cell">Leader</th>
+                  <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider hidden md:table-cell">Member 2</th>
+                  <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider hidden lg:table-cell">Member 3</th>
+                  <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Domain</th>
+                  <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider hidden sm:table-cell">Submission</th>
+                  <th className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider hidden md:table-cell">Registered</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#ffffff10]">
                 {filteredTeams.map((team, index) => (
                   <tr key={team._id} className="hover:bg-[#0a0a0f] transition-colors">
-                    <td className="px-4 py-3 text-sm text-gray-300">{index + 1}</td>
-                    <td className="px-4 py-3 text-sm font-medium text-white">{team.teamName}</td>
-                    <td className="px-4 py-3 text-sm text-gray-300">{team.leaderName}</td>
-                    <td className="px-4 py-3 text-sm text-gray-300">{team.member2}</td>
-                    <td className="px-4 py-3 text-sm text-gray-300">{team.member3 || '-'}</td>
-                    <td className="px-4 py-3">
-                      <span className={`px-2 py-1 text-xs font-medium text-white rounded-full ${getDomainBadgeColor(team.domain)}`}>
+                    <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-300">{index + 1}</td>
+                    <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-medium text-white">{team.teamName}</td>
+                    <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-300 hidden sm:table-cell">{team.leaderName}</td>
+                    <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-300 hidden md:table-cell">{team.member2}</td>
+                    <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-300 hidden lg:table-cell">{team.member3 || '-'}</td>
+                    <td className="px-2 sm:px-4 py-2 sm:py-3">
+                      <span className={`px-1 sm:px-2 py-1 text-xs font-medium text-white rounded-full ${getDomainBadgeColor(team.domain)}`}>
                         {team.domain}
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-sm">
+                    <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm hidden sm:table-cell">
                       <a
                         href={team.submissionUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#6c47ff] hover:text-[#7c57ff] transition-colors truncate block max-w-50"
+                        className="text-[#6c47ff] hover:text-[#7c57ff] transition-colors truncate block max-w-20 sm:max-w-30 md:max-w-40 lg:max-w-50"
                       >
                         {team.submissionUrl}
                       </a>
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-300">
+                    <td className="px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-300 hidden md:table-cell">
                       {new Date(team.createdAt).toLocaleDateString()}
                     </td>
                   </tr>
@@ -223,7 +231,7 @@ export default function AdminDashboard() {
           </div>
 
           {filteredTeams.length === 0 && (
-            <div className="text-center py-8 text-gray-400">
+            <div className="text-center py-6 sm:py-8 text-gray-400 text-sm sm:text-base">
               {teams.length === 0 ? 'No teams registered yet' : 'No teams match your filters'}
             </div>
           )}

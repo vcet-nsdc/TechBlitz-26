@@ -17,7 +17,14 @@ export async function GET(request: NextRequest) {
 
     const teams = await Team.find().sort({ createdAt: -1 });
     
-    return NextResponse.json(teams);
+    // Convert MongoDB objects to plain objects
+    const plainTeams = teams.map(team => ({
+      ...team.toObject(),
+      _id: team._id.toString(),
+      createdAt: team.createdAt.toISOString(),
+    }));
+    
+    return NextResponse.json(plainTeams);
   } catch (error) {
     console.error('Teams fetch error:', error);
     return NextResponse.json(
