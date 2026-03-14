@@ -38,8 +38,8 @@ export default function CertificateCanvas({ participantName, teamName, domain }:
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
-      // Draw participant name and team name on one line
-      const fullName = `${participantName} (${teamName})`;
+      // Draw participant name and team name on one line in ALL CAPS
+      const fullName = `${participantName.toUpperCase()} (${teamName.toUpperCase()})`;
       const centerY = 428;
       
       ctx.font = 'bold 48px Seasons, serif';
@@ -86,12 +86,12 @@ export default function CertificateCanvas({ participantName, teamName, domain }:
       ctx.fillStyle = '#cccccc';
       ctx.fillText('Certificate of Participation', canvasWidth / 2, 200);
 
-      // Draw participant name and team name on one line
-      const fullName = `${participantName} (${teamName})`;
+      // Draw participant name and team name on one line in ALL CAPS
+      const fullName = `${participantName.toUpperCase()} (${teamName.toUpperCase()})`;
       const centerY = 380;
 
       // Draw the combined name
-      ctx.font = 'bold 48px Seasons, serif';
+      ctx.font = 'bold 46px Seasons, serif';
       ctx.fillStyle = '#ffffff';
       ctx.shadowColor = '#000000';
       ctx.shadowBlur = 4;
@@ -181,17 +181,17 @@ export default function CertificateCanvas({ participantName, teamName, domain }:
         <button
           onClick={downloadCertificate}
           disabled={!certificateGenerated}
-          className="flex-1 px-6 py-3 bg-gradient-to-r from-[#6c47ff] to-[#00d4ff] text-white font-semibold rounded-lg hover:from-[#7c57ff] hover:to-[#10e4ff] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+          className="flex-1 px-6 py-3 bg-gradient-to-r from-red-600 to-red-800 text-white font-semibold rounded-lg hover:from-red-700 hover:to-red-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg border-2 border-red-900"
         >
           Download Certificate
         </button>
-        <button
+        {/* <button
           onClick={saveCertificate}
           disabled={!certificateGenerated}
           className="flex-1 px-6 py-3 border border-[#ffffff20] text-white font-semibold rounded-lg hover:bg-[#ffffff10] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Save to Profile
-        </button>
+        </button> */}
       </div>
     </div>
   );

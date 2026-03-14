@@ -18,7 +18,8 @@ export async function GET(
 
     await connectDB();
 
-    const team = await Team.findOne({ teamName: teamName.toLowerCase() });
+    // Case-insensitive search - convert search term to uppercase and match stored uppercase names
+    const team = await Team.findOne({ teamName: teamName.toUpperCase() });
     
     if (!team) {
       return NextResponse.json(
@@ -27,7 +28,14 @@ export async function GET(
       );
     }
 
-    return NextResponse.json(team);
+    // Convert MongoDB object to plain object for serialization
+    const plainTeam = {
+      ...team.toObject(),
+      _id: team._id.toString(),
+      createdAt: team.createdAt.toISOString(),
+    };
+
+    return NextResponse.json(plainTeam);
   } catch (error) {
     console.error('Team fetch error:', error);
     return NextResponse.json(
